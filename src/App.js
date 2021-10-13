@@ -8,10 +8,8 @@ function App() {
 	//States
 	const [bookData, setBookData] = useState([])
 	const [loading, setLoading] = useState(true)
-	const initialUrl =
-		`https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey}`
+	const initialUrl = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey}`
 
-	//useEffect will run once on render, gets book data, response is the response from the fetch
 	useEffect(() => {
 		async function fetchData() {
 			let response = await getAllBooks(initialUrl)
@@ -24,7 +22,6 @@ function App() {
 	}, [])
 
 	let slides = bookData
-	// console.log("BOOK DATA:", slides)
 
 	const initialState = {
 		slideIndex: slides.length - 1,
@@ -34,22 +31,19 @@ function App() {
 			console.log("modulo:", slides.length)
 			return {
 				...state,
-				slideIndex: 
-				(state.slideIndex + 1) % slides.length
-				// state.slideIndex === slides.length - 2 ? initialState.slideIndex : state.slideIndex === slides.length - 2 ? 0 : state.slideIndex + 1
+				slideIndex: (state.slideIndex + 1) % slides.length,
 			}
 		}
 		if (event.type === "NEXT") {
 			return {
 				...state,
 				slideIndex:
-					// state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1
-					state.slideIndex === 0 - slides.length ? -1 : state.slideIndex - 1 
+					state.slideIndex === 0 - slides.length ? -1 : state.slideIndex - 1,
 			}
 		}
 	}
 	const [state, dispatch] = useReducer(slidesReducer, initialState)
-	console.log('STATE:', state)
+	console.log("STATE:", state)
 
 	const headerSlide = (
 		<div className="headerSlide">
@@ -64,17 +58,21 @@ function App() {
 				<h1>Loading...</h1>
 			) : (
 				<>
-				
 					<div className="slides">
-						
-						{state.slideIndex ===  -1 ? headerSlide : <button onClick={() => dispatch({ type: "PREV" })}>‹</button>}
-						
+						{state.slideIndex === -1 ? (
+							headerSlide
+						) : (
+							<button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+						)}
+
 						{[...slides].map((slide, i) => {
 							let offset = slides.length + (state.slideIndex - i)
 							return <Slide slide={slide} offset={offset} key={i} />
 						})}
-						
-						<button onClick={() => dispatch({ type: "NEXT" })}>{state.slideIndex === (0 - slides.length) ? '↫' : '›'}</button>
+
+						<button onClick={() => dispatch({ type: "NEXT" })}>
+							{state.slideIndex === 0 - slides.length ? "↫" : "›"}
+						</button>
 					</div>
 				</>
 			)}
