@@ -5,7 +5,6 @@ import "./App.scss"
 import apiKey from "./env"
 
 function App() {
-	//States
 	const [bookData, setBookData] = useState([])
 	const [loading, setLoading] = useState(true)
 	const initialUrl = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey}`
@@ -21,6 +20,22 @@ function App() {
 		fetchData()
 	}, [])
 
+	useEffect(() => {
+		window.addEventListener(
+			"keydown",
+			(ev) => (ev.key === "ArrowRight" ? handleNext() : null),
+			false
+		)
+	}, [])
+
+	useEffect(() => {
+		window.addEventListener(
+			"keydown",
+			(ev) => (ev.key === "ArrowLeft" ? handlePrev() : null),
+			false
+		)
+	}, [])
+
 	let slides = bookData
 
 	const initialState = {
@@ -28,10 +43,10 @@ function App() {
 	}
 	const slidesReducer = (state, event) => {
 		if (event.type === "PREV") {
-			console.log("modulo:", slides.length)
 			return {
 				...state,
-				slideIndex: (state.slideIndex + 1) % slides.length,
+				slideIndex:
+					state.slideIndex === -1 ? -1 : (state.slideIndex + 1) % slides.length,
 			}
 		}
 		if (event.type === "NEXT") {
@@ -43,7 +58,6 @@ function App() {
 		}
 	}
 	const [state, dispatch] = useReducer(slidesReducer, initialState)
-	console.log("STATE:", state)
 
 	const headerSlide = (
 		<div className="headerSlide">
@@ -51,6 +65,9 @@ function App() {
 			<h3>Best Sellers List</h3>
 		</div>
 	)
+
+	const handleNext = () => dispatch({ type: "NEXT" })
+	const handlePrev = () => dispatch({ type: "PREV" })
 
 	return (
 		<div>
@@ -62,7 +79,7 @@ function App() {
 						{state.slideIndex === -1 ? (
 							headerSlide
 						) : (
-							<button onClick={() => dispatch({ type: "PREV" })}>‹</button>
+							<button onClick={handlePrev}>‹</button>
 						)}
 
 						{[...slides].map((slide, i) => {
@@ -70,7 +87,7 @@ function App() {
 							return <Slide slide={slide} offset={offset} key={i} />
 						})}
 
-						<button onClick={() => dispatch({ type: "NEXT" })}>
+						<button onClick={handleNext}>
 							{state.slideIndex === 0 - slides.length ? "↫" : "›"}
 						</button>
 					</div>
