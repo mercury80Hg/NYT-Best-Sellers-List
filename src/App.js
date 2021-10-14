@@ -23,18 +23,16 @@ function App() {
 	useEffect(() => {
 		window.addEventListener(
 			"keydown",
-			(ev) => (ev.key === "ArrowRight" ? handleNext() : null),
-			false
-		)
+			(ev) => {
+				if(ev.key === "ArrowRight") {
+					handleNext()
+				} else if (ev.key === "ArrowLeft") {
+					handlePrev()		
+				}
+			})
 	}, [])
 
-	useEffect(() => {
-		window.addEventListener(
-			"keydown",
-			(ev) => (ev.key === "ArrowLeft" ? handlePrev() : null),
-			false
-		)
-	}, [])
+	
 
 	let slides = bookData
 
