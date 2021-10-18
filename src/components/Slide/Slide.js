@@ -5,6 +5,8 @@ function Slide({ slide, offset }) {
 	const active = offset === 0 ? true : null
 	const ref = useTilt(active)
 
+
+
 	return (
 		<div
 			ref={ref}
@@ -21,18 +23,25 @@ function Slide({ slide, offset }) {
 					backgroundImage: `url('${slide.book_image}')`,
 				}}
 			/>
-			<div
-				className="slideContent"
-				style={{
-					backgroundImage: `url('${slide.book_image}')`,
-				}}
-			>
-				<div className="slideContentInner">
-					{/* <h2 className="slideTitle">{slide.title}</h2>
-          <h3 className="slideSubtitle">{slide.subtitle}</h3> */}
-					<p className="slideDescription">{slide.description}</p>
+				<div
+					className="slideContent"
+					style={{
+						backgroundImage: active ? "unset" : `url('${slide.book_image}')`,
+					}}
+				>
+					<div className="slideContentInner">
+						<h2 className="mobile">New York Times Best Seller List</h2>
+						{active ? (
+							<>
+								<img src={slide.book_image} alt={(slide.title, slide.subtitle)} />
+							</>
+						) : null}
+						{/* <h2 className="slideTitle">{slide.title}</h2>
+						<h3 className="slideSubtitle">{slide.subtitle}</h3> */}
+						
+						<p className="slideDescription">{slide.description}</p>
+					</div>
 				</div>
-			</div>
 		</div>
 	)
 }
