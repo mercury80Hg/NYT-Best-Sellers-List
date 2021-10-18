@@ -57,15 +57,15 @@ function App() {
 	}
 	const [state, dispatch] = useReducer(slidesReducer, initialState)
 
+	const handleNext = () => dispatch({ type: "NEXT" })
+	const handlePrev = () => dispatch({ type: "PREV" })
+
 	const headerSlide = (
 		<div className="headerSlide">
 			<h1>New York Times</h1>
 			<h3>Best Sellers List</h3>
 		</div>
 	)
-
-	const handleNext = () => dispatch({ type: "NEXT" })
-	const handlePrev = () => dispatch({ type: "PREV" })
 
 	return (
 		<div>
@@ -74,9 +74,7 @@ function App() {
 			) : (
 				<>
 					<div className="slides">
-						{state.slideIndex === -1 ? (
-							headerSlide
-						) : (
+						{state.slideIndex === -1 ? headerSlide : (
 							<button onClick={handlePrev}>‹</button>
 						)}
 
