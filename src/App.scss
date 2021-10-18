@@ -216,7 +216,7 @@ body {
 
 		img {
 			height: 55vh;
-			width: 80vw;
+			width: 85vw;
 		}
 
 		////NYT Header for Mobile
@@ -236,7 +236,6 @@ body {
 	///Description text
 	.slideContentInner {
 		height: 100vh;
-		padding-left: 3.5vw;
 
 		.slideDescription {
 			width: unset;
@@ -246,13 +245,13 @@ body {
 	/// The entire body and background
 	.slides {
 		> button {
-			top: 105%;
+			top: 20vh;
 
 			&:first-child {
-				left: -135%;
+				left: -42vw;
 			}
 			&:last-child {
-				right: -135%;
+				right: -42vw;
 			}
 		}
 	}
