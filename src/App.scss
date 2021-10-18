@@ -213,9 +213,9 @@ body {
 		height: 50vh;
 		background-size: 50vw;
 
-
 		img {
 			height: 55vh;
+			width: 80vw;
 		}
 
 		////NYT Header for Mobile
@@ -227,13 +227,15 @@ body {
 			color: cornflowerblue;
 			align-items: flex-start;
 			text-align: center;
-			// margin: 0;
+			margin-top: 10vh;
+			margin-bottom: 1vh;
 		}
 	}
 
 	///Description text
 	.slideContentInner {
 		height: 100vh;
+		padding-left: 3.5vw;
 
 		.slideDescription {
 			width: unset;
@@ -243,7 +245,14 @@ body {
 	/// The entire body and background
 	.slides {
 		> button {
-			top: 120%;
+			top: 105%;
+
+			&:first-child {
+				left: -135%;
+			}
+			&:last-child {
+				right: -135%;
+			}
 		}
 	}
 }
