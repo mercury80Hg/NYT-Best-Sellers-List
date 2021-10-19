@@ -9,6 +9,7 @@ function App() {
 	const [loading, setLoading] = useState(true)
 	const initialUrl = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey}`
 
+	//lifecycle for fetching NYT API list
 	useEffect(() => {
 		async function fetchData() {
 			let response = await getAllBooks(initialUrl)
@@ -20,6 +21,7 @@ function App() {
 		fetchData()
 	}, [])
 
+	//lifecycle of keystrokes
 	useEffect(() => {
 		window.addEventListener(
 			"keydown",
@@ -33,12 +35,15 @@ function App() {
 	}, [])
 
 	
-
+	//renaming of API data for integration into carousel
 	let slides = bookData
 
+	//first slides index: actually ends up being opposite since data needed to be reversed
 	const initialState = {
 		slideIndex: slides.length - 1,
 	}
+
+	//reducer for the slides and slide movement logic
 	const slidesReducer = (state, event) => {
 		if (event.type === "PREV") {
 			return {
@@ -55,11 +60,15 @@ function App() {
 			}
 		}
 	}
+
+	// state for moving the slides forward or back
 	const [state, dispatch] = useReducer(slidesReducer, initialState)
 
+	//function for state change of slide movement named in order to be reused
 	const handleNext = () => dispatch({ type: "NEXT" })
 	const handlePrev = () => dispatch({ type: "PREV" })
 
+	//not a real slide, exists on the background simulating a first slide on desktop view
 	const headerSlide = (
 		<div className="headerSlide">
 			<h1>New York Times</h1>
