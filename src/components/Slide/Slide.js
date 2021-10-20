@@ -9,7 +9,7 @@ function Slide({ slide, offset }) {
 
 	return (
 		<div
-			ref={ref}
+			ref={window.screen.width > 780 ? ref : null }
 			className="slide"
 			data-active={active}
 			style={{
@@ -36,9 +36,6 @@ function Slide({ slide, offset }) {
 								<img src={slide.book_image} alt={(slide.title, slide.subtitle)} />
 							</>
 						) : null}
-						{/* <h2 className="slideTitle">{slide.title}</h2>
-						<h3 className="slideSubtitle">{slide.subtitle}</h3> */}
-						
 						<p className="slideDescription">{slide.description}</p>
 					</div>
 				</div>

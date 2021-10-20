@@ -13,13 +13,11 @@ function App() {
 	useEffect(() => {
 		async function fetchData() {
 			let response = await getAllBooks(initialUrl)
-			console.log("RESPONSE: ", response.results.books)
-
 			setBookData(response.results.books.reverse())
 			setLoading(false)
 		}
 		fetchData()
-	}, [])
+	}, [initialUrl])
 
 	//lifecycle of keystrokes
 	useEffect(() => {
