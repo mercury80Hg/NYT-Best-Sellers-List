@@ -1,3 +1,8 @@
+#An Exercise in pulling and integrating an API
+
+I created this project for myself to get more experience in integrating the parts and wiring of software.  I knew I wanted to get more practice using API's other than following a tutorial, so I picked one I thought might be interesting that had data I could use and went with it.  Adding a Carousel and learning SASS were the extras that made it fun and difficult.  Adding on to that, tweaking the media formating for mobile devices was also a challenge.  In the end I learned a lot and had fun and while I had many other ideas and plans that popped up while doing this, you have to remind yourself not to stray too far from the path.  I have posted those further tweaks in my github, but I think this as-is was enough for now being just a NYT Bestseller display vehicle.  I guess the story of it is: "If I had the time I would one day read all the books on the NYT Bestsellers List"  It's an elusive goal as the list always changes, just as software and technology never stands still.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
