@@ -9,6 +9,10 @@ function App() {
 	const [loading, setLoading] = useState(true)
 	const initialUrl = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey}`
 
+	//setting the viewport for the useable space accounting for mobile nav/url bar interference
+	// let vh = window.innerHeight * 0.01
+	// document.documentElement.style.setProperty("--vh", `${vh}px`)
+
 	useEffect(() => {
 		async function fetchData() {
 			let response = await getAllBooks(initialUrl)
@@ -21,18 +25,14 @@ function App() {
 	}, [])
 
 	useEffect(() => {
-		window.addEventListener(
-			"keydown",
-			(ev) => {
-				if(ev.key === "ArrowRight") {
-					handleNext()
-				} else if (ev.key === "ArrowLeft") {
-					handlePrev()		
-				}
-			})
+		window.addEventListener("keydown", (ev) => {
+			if (ev.key === "ArrowRight") {
+				handleNext()
+			} else if (ev.key === "ArrowLeft") {
+				handlePrev()
+			}
+		})
 	}, [])
-
-	
 
 	let slides = bookData
 
@@ -74,7 +74,9 @@ function App() {
 			) : (
 				<>
 					<div className="slides">
-						{state.slideIndex === -1 ? headerSlide : (
+						{state.slideIndex === -1 ? (
+							headerSlide
+						) : (
 							<button onClick={handlePrev}>‹</button>
 						)}
 
