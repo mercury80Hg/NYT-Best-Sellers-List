@@ -69,28 +69,31 @@ function App() {
 
 	return (
 		<div>
-			{loading ? (
-				<h1>Loading...</h1>
-			) : (
-				<>
-					<div className="slides">
-						{state.slideIndex === -1 ? (
-							headerSlide
-						) : (
-							<button onClick={handlePrev}>‹</button>
-						)}
+			<div id="turn">Please Rotate Screen</div>
+			<div id="container">
+				{loading ? (
+					<h1>Loading...</h1>
+				) : (
+					<>
+						<div className="slides">
+							{state.slideIndex === -1 ? (
+								headerSlide
+							) : (
+								<button onClick={handlePrev}>‹</button>
+							)}
 
-						{[...slides].map((slide, i) => {
-							let offset = slides.length + (state.slideIndex - i)
-							return <Slide slide={slide} offset={offset} key={i} />
-						})}
+							{[...slides].map((slide, i) => {
+								let offset = slides.length + (state.slideIndex - i)
+								return <Slide slide={slide} offset={offset} key={i} />
+							})}
 
-						<button onClick={handleNext}>
-							{state.slideIndex === 0 - slides.length ? "↫" : "›"}
-						</button>
-					</div>
-				</>
-			)}
+							<button onClick={handleNext}>
+								{state.slideIndex === 0 - slides.length ? "↫" : "›"}
+							</button>
+						</div>
+					</>
+				)}
+			</div>
 		</div>
 	)
 }
