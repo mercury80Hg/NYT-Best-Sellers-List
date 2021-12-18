@@ -56,9 +56,9 @@ body {
 		border: none;
 		color: rgb(243, 43, 210);
 		position: absolute;
-		font-size: 15rem;
-		width: 5rem;
-		height: 5rem;
+		font-size: 10vh;
+		width: 5vh;
+		height: 5vh;
 		top: 85%;
 		transition: opacity 0.3s;
 		opacity: 0.7;
@@ -125,7 +125,7 @@ body {
 
 	.slideSubtitle,
 	.slideTitle {
-		font-size: 2rem;
+		font-size: 2vh;
 		font-weight: normal;
 		letter-spacing: 0.2ch;
 		text-transform: uppercase;
@@ -138,7 +138,7 @@ body {
 
 	.slideDescription {
 		margin: 0;
-		font-size: 1.2rem;
+		font-size: 2vh;
 		letter-spacing: 0.2ch;
 		width: 28vw;
 		align-items: flex-start;
@@ -218,7 +218,7 @@ body {
 
 	body {
 		overflow: hidden;
-		
+
 		height: 100vh; /* fallback for browsers without customizable properties  */
 		height: calc(var(--vh, 1vh) * 100);
 		/* adjusts for 'useable' viewport accounting for the space taken by navbars and url inputs */
@@ -234,60 +234,51 @@ body {
 		width: 30vw;
 		height: 60vh;
 		background-size: 50vw;
-		
+
 		////NYT Header for Mobile
 		.mobile {
 			display: block;
 			font-family: Georgia, "Times New Roman", Times, serif;
-			font-size: 2rem;
+			font-size: 4vh;
 			color: cornflowerblue;
 			// align-items: center;
 			text-align: center;
-			
 		}
 
-			///Description text
+		///Description text
 		.slideContentInner {
 			// height: 100vh;
 			display: grid;
-			
+
 			img {
 				height: 55vh;
 				// width: 75vw;
 				// left: 2vw;
 			}
 
-		.slideDescription {
-			width: unset;
+			.slideDescription {
+				width: unset;
+			}
 		}
 	}
 
-
-	}
-
-	
-
 	/// The entire body and background
 	.slides {
-		
 		> button {
-			top:unset;
+			top: unset;
 			height: 100vh;
 			width: 20vh;
 			opacity: 0;
-		
+
 			&:hover {
 				opacity: 0;
 			}
-	
 
 			&:first-child {
 				left: -100%;
 			}
 			&:last-child {
 				right: -100%;
-				
-				
 			}
 		}
 	}
@@ -300,7 +291,7 @@ body {
 // }
 
 //Makes Landscape phone mode inactive and notifies user to return to portrait
-@media only screen and (min-width: 770px) and (max-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-device-width: 770px) and (max-device-width: 1024px) and (orientation: landscape) {
 	#turn {
 		display: block;
 		font-size: 5vh;
