@@ -63,12 +63,6 @@ body {
 		transition: opacity 0.3s;
 		opacity: 0.7;
 		z-index: 5;
-		
-
-		.button-pos {
-			
-			// color: white;
-		}
 
 		&:hover {
 			opacity: 1;
@@ -230,6 +224,7 @@ body {
 	#container {
 		display: block;
 	}
+
 	////disabling the NYT header from desktop view
 	.headerSlide {
 		display: none;
