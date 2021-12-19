@@ -10,8 +10,8 @@ function App() {
 	const initialUrl = `https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=${apiKey}`
 
 	//setting the viewport for the useable space accounting for mobile nav/url bar interference
-	// let vh = window.innerHeight * 0.01
-	// document.documentElement.style.setProperty("--vh", `${vh}px`)
+	let vh = window.innerHeight * 0.01
+	document.documentElement.style.setProperty("--vh", `${vh}px`)
 
 	useEffect(() => {
 		async function fetchData() {

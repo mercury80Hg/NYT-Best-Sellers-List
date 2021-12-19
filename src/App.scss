@@ -56,13 +56,19 @@ body {
 		border: none;
 		color: rgb(243, 43, 210);
 		position: absolute;
-		font-size: 10vh;
-		width: 5vh;
-		height: 5vh;
-		top: 85%;
+		font-size: 20vh;
+		width: 30vw;
+		height: 100vh;
+		// top: 85%;
 		transition: opacity 0.3s;
 		opacity: 0.7;
 		z-index: 5;
+		
+
+		.button-pos {
+			
+			// color: white;
+		}
 
 		&:hover {
 			opacity: 1;
@@ -73,10 +79,10 @@ body {
 		}
 
 		&:first-child {
-			left: -50%;
+			left: -90%;
 		}
 		&:last-child {
-			right: -50%;
+			right: -90%;
 		}
 	}
 }
@@ -209,13 +215,6 @@ body {
 
 ///////Phone Portrait
 @media only screen and (orientation: portrait) {
-	#turn {
-		display: none;
-	}
-	#container {
-		display: block;
-	}
-
 	body {
 		overflow: hidden;
 
@@ -224,6 +223,13 @@ body {
 		/* adjusts for 'useable' viewport accounting for the space taken by navbars and url inputs */
 	}
 
+	//pushes the mobile user to use portrait orientation
+	#turn {
+		display: none;
+	}
+	#container {
+		display: block;
+	}
 	////disabling the NYT header from desktop view
 	.headerSlide {
 		display: none;
