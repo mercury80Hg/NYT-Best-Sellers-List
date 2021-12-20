@@ -292,7 +292,7 @@ body {
 // }
 
 //Makes Landscape phone mode inactive and notifies user to return to portrait
-@media only screen and (min-device-width: 770px) and (max-device-width: 1366px) and (orientation: landscape) {
+@media only screen and (max-device-width: 1025px) and (orientation: landscape) {
 	.turn {
 		display: block;
 		font-size: 5vh;
