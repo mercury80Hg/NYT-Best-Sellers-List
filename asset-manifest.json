@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/NYT-Best-Sellers-List/static/css/main.0e803ef0.chunk.css",
+    "main.css": "/NYT-Best-Sellers-List/static/css/main.a38bc9f2.chunk.css",
     "main.js": "/NYT-Best-Sellers-List/static/js/main.e8e55c21.chunk.js",
     "main.js.map": "/NYT-Best-Sellers-List/static/js/main.e8e55c21.chunk.js.map",
     "runtime-main.js": "/NYT-Best-Sellers-List/static/js/runtime-main.52ea00a7.js",
@@ -8,13 +8,13 @@
     "static/js/2.ec1c173b.chunk.js": "/NYT-Best-Sellers-List/static/js/2.ec1c173b.chunk.js",
     "static/js/2.ec1c173b.chunk.js.map": "/NYT-Best-Sellers-List/static/js/2.ec1c173b.chunk.js.map",
     "index.html": "/NYT-Best-Sellers-List/index.html",
-    "static/css/main.0e803ef0.chunk.css.map": "/NYT-Best-Sellers-List/static/css/main.0e803ef0.chunk.css.map",
+    "static/css/main.a38bc9f2.chunk.css.map": "/NYT-Best-Sellers-List/static/css/main.a38bc9f2.chunk.css.map",
     "static/js/2.ec1c173b.chunk.js.LICENSE.txt": "/NYT-Best-Sellers-List/static/js/2.ec1c173b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.52ea00a7.js",
     "static/js/2.ec1c173b.chunk.js",
-    "static/css/main.0e803ef0.chunk.css",
+    "static/css/main.a38bc9f2.chunk.css",
     "static/js/main.e8e55c21.chunk.js"
   ]
 }
