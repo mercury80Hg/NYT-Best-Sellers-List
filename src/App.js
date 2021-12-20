@@ -69,8 +69,8 @@ function App() {
 
 	return (
 		<div>
-			<div id="turn">Please Rotate Screen</div>
-			<div id="container">
+			<div className="turn">Please Rotate Screen</div>
+			<div className="container">
 				{loading ? (
 					<h1>Loading...</h1>
 				) : (

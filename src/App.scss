@@ -218,10 +218,10 @@ body {
 	}
 
 	//pushes the mobile user to use portrait orientation
-	#turn {
+	.turn {
 		display: none;
 	}
-	#container {
+	.container {
 		display: block;
 	}
 
@@ -292,12 +292,12 @@ body {
 // }
 
 //Makes Landscape phone mode inactive and notifies user to return to portrait
-@media only screen and (min-device-width: 770px) and (max-device-width: 1024px) and (orientation: landscape) {
-	#turn {
+@media only screen and (min-device-width: 770px) and (max-device-width: 1366px) and (orientation: landscape) {
+	.turn {
 		display: block;
 		font-size: 5vh;
 	}
-	#container {
+	.container {
 		display: none;
 	}
 }
