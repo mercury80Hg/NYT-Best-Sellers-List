@@ -4,6 +4,38 @@ I created this project for myself to get more experience in integrating an API a
 
 
 
+## Getting Started
+
+Clone it, `npm install` it and `npm start`
+
+
+## Tech Stack
+
+- React
+- Javascript
+- Sass
+- HTML
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
